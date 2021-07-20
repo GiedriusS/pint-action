@@ -1,0 +1,12 @@
+name: 'cloudflare/pint action'
+description: 'Lints alerts and prints them via annotations'
+inputs:
+    log-level:
+        description: "Log level"
+        default: "debug"
+runs:
+    using: "docker"
+    image: "stag1e/pint"
+    args:
+        - "--log-level=${{ inputs.log-level }}"
+        - 'ci'
